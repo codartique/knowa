@@ -1,0 +1,101 @@
+article {
+  counter-reset: section;
+}
+
+h1 {
+    counter-increment: section;
+    counter-reset: theorem;
+}
+
+.theorem, .lemma, .proposition, .corollary {
+    margin: 1em 1em 1em 0;
+    padding: 1em 1em;
+    font-style: italic;
+    background: #effaff;
+    border-style: none none none solid;
+    border-width: 2px;
+    /* border-radius: 10px; */
+    /* box-shadow: 12px 12px 24px rgba(0,0,0,0.1),
+		-12px -12px 24px rgba(255,255,255,1) */
+    border-color: #64b5f6;
+}
+
+.theorem strong {
+    font-style: normal;
+}
+
+.lemma strong {
+    font-style: normal;
+}
+
+.proposition strong {
+    font-style: normal;
+}
+
+.corollary strong {
+    font-style: normal;
+}
+
+.theorem {
+    counter-reset: corollary;
+}
+
+.definition {
+    margin: 1em 1em 1em 0;
+    padding: 0.5em 1em;
+    background: #eff5ef;
+    border-style: none none none solid;
+    border-width: 2px;
+    border-color: #81c784;
+
+}
+
+.definition:before {
+  counter-increment: theorem;
+  content: "Definition " counter(section) "." counter(theorem) ". ";
+  font-weight: bold;
+  color: #81c784;
+}
+
+.theorem:before {
+  counter-increment: theorem;
+  content: "Theorem " counter(section) "." counter(theorem) ". ";
+  font-weight: bold;
+  font-style: normal;
+  color: #64b5f6;
+}
+
+.lemma:before {
+  counter-increment: theorem;
+  content: "Lemma " counter(section) "." counter(theorem) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+.example:before {
+  counter-increment: theorem;
+  content: "Example " counter(section) "." counter(theorem) ". ";
+  font-weight: bold;
+}
+
+.proposition:before {
+  counter-increment: theorem;
+  content: "Proposition " counter(section) "." counter(theorem) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+.corollary:before {
+  counter-increment: corollary;
+  content: "Corollary " counter(section) "." counter(theorem) "." counter(corollary) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+p:first-child {
+  display: inline;
+}
+
+.proof {
+    margin: 1em 1em 1em 0;
+}
